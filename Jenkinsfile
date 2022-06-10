@@ -47,9 +47,6 @@ spec:
             }
         }
         stage('docker login') {
-            steps {
-               
-            }
         }
         stage('docker push') {
             steps {
