@@ -52,16 +52,6 @@ spec:
                 sh 'docker login -u surendra143245 -p Surendra@143'
             }
         }
-        stage ("Print variable") {
-            steps {
-                wrap([$class: "MaskPasswordsBuildWrapper",
-                      varPasswordPairs: [[password: MY_PASSWORD],
-                                        [password: MY_SECRET]]]) {
-                echo "Password: ${MY_PASSWORD}"
-                echo "Secret: ${MY_SECRET}"
-                }
-            }
-        }
         stage('docker push') {
             steps {
                 sh 'docker push surendra143245/myapp'
