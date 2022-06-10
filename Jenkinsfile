@@ -48,8 +48,8 @@ spec:
         }
         stage('docker login') {
             steps {
-                "ServerURL": "https://index.docker.io/v1",
-                "Username": "surendra143245",
+                "ServerURL": "https://index.docker.io/v1"
+                "Username": "surendra143245"
                 "Secret": "Surendra@143"
             }
         }
