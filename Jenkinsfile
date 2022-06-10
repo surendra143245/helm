@@ -49,9 +49,10 @@ spec:
         }
         stage('docker login') {
             environment {
-                docker-login = credentials('surendra143245')   
-            steps {
-                sh "echo 'docker_id is $docker-login'" 
+                 docker-login = credentials('surendra143245')   
+                 steps {
+                     sh "echo 'docker_id is $docker-login'" 
+                 }
             }
         }
         stage('docker push') {
