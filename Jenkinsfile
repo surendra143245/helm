@@ -50,6 +50,8 @@ spec:
         stage('docker login') {
             steps {
                 sh 'docker login -u surendra143245 -p Surendra@143'
+            }
+        }
         stage ("Print variable") {
             steps {
                 wrap([$class: "MaskPasswordsBuildWrapper",
