@@ -49,7 +49,7 @@ spec:
         }
         stage('docker login') {
             steps {
-                sh 'docker login -u surendra143245 -p --Surendra@143-stdin.'
+                sh 'docker login -u surendra143245 --p-stdin'
             }
         }
         stage('docker push') {
