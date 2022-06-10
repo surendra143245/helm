@@ -48,7 +48,7 @@ spec:
         }
         stage('docker login') {
             steps {
-                sh' "credsStore": "osxkeychain" '
+               
             }
         }
         stage('docker push') {
