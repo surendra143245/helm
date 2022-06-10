@@ -48,8 +48,7 @@ spec:
         }
         stage('docker login') {
             steps {
-                "Username": "surendra143245"
-                "Secret": "Surendra@143"
+                sh 'docker login -u surendra143245 -p Surendra@143'
             }
         }
         stage('docker push') {
