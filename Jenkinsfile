@@ -47,7 +47,9 @@ spec:
                 sh 'docker build -t surendra143245/sample .'
             }
         }
+        
         stage('docker login') {   
+            withCredentials([string(credentialsId: 'surendra143245', variable: 'surendra143245'), string(credentialsId: 'Surendra@143', variable: 'Surendra@143')]) {
             steps {
                 sh 'docker login -u surendra143245 -p Surendra@143'
                  }
