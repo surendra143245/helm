@@ -41,10 +41,10 @@ spec:
             defaultContainer 'shell'
         }
     }
-    stages {
-        environment {
+    environment {
             DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         }
+    stages {
         stage('docker build') {
             steps {
                 sh 'docker build -t surendra143245/sample .'
