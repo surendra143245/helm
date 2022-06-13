@@ -49,8 +49,8 @@ spec:
         }
         
         stage('docker login') {   
-            withCredentials([string(credentialsId: 'surendra143245', variable: 'surendra143245'), string(credentialsId: 'Surendra@143', variable: 'Surendra@143')]) {
             steps {
+                withCredentials([string(credentialsId: 'surendra143245', variable: 'surendra143245'), string(credentialsId: 'Surendra@143', variable: 'Surendra@143')]) {
                 sh 'docker login -u surendra143245 -p Surendra@143'
                  }
             }
@@ -62,10 +62,10 @@ spec:
             }
         }
         stage("install helm"){
-       steps {
-         sh 'curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3'
-         sh 'chmod 700 get_helm.sh'
-         sh './get_helm.sh'
+            steps {
+                sh 'curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3'
+                sh 'chmod 700 get_helm.sh'
+                sh './get_helm.sh'
            }
         }
        stage('helm') {
