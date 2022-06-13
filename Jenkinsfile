@@ -42,6 +42,9 @@ spec:
         }
     }
     stages {
+        environment {
+            DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+        }
         stage('docker build') {
             steps {
                 sh 'docker build -t surendra143245/sample .'
@@ -50,9 +53,7 @@ spec:
         
         stage('docker login') {   
             steps {
-                script{
-                    withCredentials([string(credentialsId: 'surendra143245', variable: 'dockerhub')]) {
-                        sh 'docker login -u surendra143245 -p ${dockerhub}'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin '
                     }
                 }
             }
