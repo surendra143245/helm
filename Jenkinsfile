@@ -52,13 +52,7 @@ spec:
                 sh 'docker login -u surendra143245 -p Surendra@143'
                  }
             }
-        stage('list credentials ids') {
-            steps {
-                script {
-                sh 'docker login -u surendra143245 --p-stdin'
-                }
-            }
-        }
+        
         stage('docker push') {
             steps {
                 sh 'docker push surendra143245/myapp'
