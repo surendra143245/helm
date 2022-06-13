@@ -52,8 +52,8 @@ spec:
             steps {
                 script{
                     withCredentials([string(credentialsId: 'surendra143245', variable: 'dockerhub')]) {
-                    sh "docker login -u $surendra143245 -p $dockerhub"
-                    sh "docker 'push surendra143245/myapp'
+                    sh 'docker login -u $surendra143245 -p $dockerhub'
+                    sh 'docker push surendra143245/myapp'
                     }
                 }
             }
