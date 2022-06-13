@@ -50,7 +50,7 @@ spec:
         
         stage('docker login') {   
             steps {
-                sh 'docker login --username surendra143245 --password-stdin'    
+                sh 'docker login --username surendra143245 --password-Surendra@143'    
             }
         }
         
