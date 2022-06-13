@@ -47,11 +47,9 @@ spec:
                 sh 'docker build -t surendra143245/sample .'
             }
         }
-        stage('docker login') {
-            environment {
-                 docker-login = credentials('surendra143245')   
-                 steps {
-                     sh "echo 'docker_id is $docker-login'" 
+        stage('docker login') {   
+            steps {
+                sh 'docker login -u surendra143245 -p Surendra@143'
                  }
             }
         }
