@@ -48,17 +48,14 @@ spec:
             }
         }
         
-        stage('docker login') {   
+        stage('push docker image') {   
             steps {
-                withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhub')]) {
-                sh "docker login -u $surendra143245 -p $dockerhub" 
+                script{
+                    withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhub')]) {
+                    sh "docker login -u $surendra143245 -p $dockerhub"
+                    sh "docker 'push surendra143245/myapp'
+                    }
                 }
-            }
-        }
-        
-        stage('docker push') {
-            steps {
-                sh 'docker push surendra143245/myapp'
             }
         }
         stage("install helm"){
