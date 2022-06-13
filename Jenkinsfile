@@ -50,7 +50,9 @@ spec:
         
         stage('docker login') {   
             steps {
-                sh 'docker login --username surendra143245 --password-stdin'    
+                withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhub')]) {
+                sh "docker login -u $surendra143245 -p $dockerhub" 
+                }
             }
         }
         
