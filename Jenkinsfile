@@ -51,7 +51,7 @@ spec:
         stage('push docker image') {   
             steps {
                 script{
-                    withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhub')]) {
+                    withCredentials([string(credentialsId: 'surendra143245', variable: 'dockerhub')]) {
                     sh "docker login -u $surendra143245 -p $dockerhub"
                     sh "docker 'push surendra143245/myapp'
                     }
