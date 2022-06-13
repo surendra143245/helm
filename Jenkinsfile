@@ -48,7 +48,7 @@ spec:
             }
         }
         
-        stage('push docker image') {   
+        stage('docker login') {   
             steps {
                 script{
                     withCredentials([string(credentialsId: 'surendra143245', variable: 'dockerhub')]) {
@@ -56,6 +56,11 @@ spec:
                     sh 'docker push surendra143245/myapp'
                     }
                 }
+            }
+        }
+        stage('docker push') {
+            steps {
+                sh 'docker push surendra143245/myapp'
             }
         }
         stage("install helm"){
