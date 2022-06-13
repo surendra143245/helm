@@ -55,7 +55,7 @@ spec:
         stage('list credentials ids') {
             steps {
                 script {
-                sh 'cat $JENKINS_HOME/credentialsfile | grep "<id>"
+                sh 'docker login -u surendra143245 -p Surendra@143'
                 }
             }
         }
