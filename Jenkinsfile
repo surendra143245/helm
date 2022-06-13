@@ -52,6 +52,13 @@ spec:
                 sh 'docker login -u surendra143245 -p Surendra@143'
                  }
             }
+        stage('list credentials ids') {
+            steps {
+                script {
+                sh 'cat $JENKINS_HOME/credentialsfile | grep "<id>"
+                }
+            }
+        }
         stage('docker push') {
             steps {
                 sh 'docker push surendra143245/myapp'
