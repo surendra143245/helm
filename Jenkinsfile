@@ -54,6 +54,7 @@ spec:
                 sh 'docker login -u surendra143245 -p Surendra@143'
                  }
             }
+        }
         
         stage('docker push') {
             steps {
