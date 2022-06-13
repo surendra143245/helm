@@ -50,9 +50,7 @@ spec:
         
         stage('docker login') {   
             steps {
-                withCredentials([string(credentialsId: 'surendra143245', variable: 'surendra143245'), string(credentialsId: 'Surendra@143', variable: 'Surendra@143')]) {
-                sh 'docker login -u surendra143245 -p Surendra@143'
-                 }
+                sh 'docker login -u surendra143245 -p Surendra@143'    
             }
         }
         
