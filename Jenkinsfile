@@ -68,11 +68,5 @@ spec:
                 sh './get_helm.sh'
            }
         }
-       stage('helm') {
-           steps {
-               sh 'helm version'
-               sh 'helm upgrade --install dotnet1 first-app'
-           }
-       }
     }
 }
